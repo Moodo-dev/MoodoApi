@@ -6,7 +6,7 @@ const app = express();
 const PORT = 5001;
 const version = 0.1
 
-
+const router = Router();
 
 app.use(bodyParser.json());
 
