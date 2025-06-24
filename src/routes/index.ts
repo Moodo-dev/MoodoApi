@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { loggedMood } from "../models/loggedMood";
-import { router as moodRouter } from "./moodRoutes";
+import { moods, router as moodRouter } from "./moodRoutes";
 
 const router = Router();
 
@@ -17,5 +17,7 @@ const testMoods: loggedMood[] = [
 ];
 
 router.use("/moods", moodRouter);
+
+testMoods.forEach((mood) => moods.push(mood));
 
 export { router };
