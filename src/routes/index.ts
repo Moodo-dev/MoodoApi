@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { loggedMood } from "../models/loggedMood";
+import { router as moodRouter } from "./moodRoutes";
 
 const router = Router();
 
