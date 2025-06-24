@@ -16,4 +16,4 @@ router.post("/", (req, res) => {
   res.status(201).json(newMood);
 });
 
-export { router };
+export { router, moods };
