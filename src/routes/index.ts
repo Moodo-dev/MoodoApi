@@ -14,6 +14,11 @@ const testMoods: loggedMood[] = [
     mood: "😃",
     note: "Had a nice walk outside.",
   },
+  {
+    id: "hardCoded",
+    mood: "😡",
+    note: "aaaaaaaaaa",
+  },
 ];
 
 router.use("/moods", moodRouter);
