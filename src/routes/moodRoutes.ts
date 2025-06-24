@@ -15,3 +15,5 @@ router.post("/", (req, res) => {
   moods.push(newMood);
   res.status(201).json(newMood);
 });
+
+export { router };
