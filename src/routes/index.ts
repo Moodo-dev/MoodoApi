@@ -16,4 +16,6 @@ const testMoods: loggedMood[] = [
   },
 ];
 
+router.use("/moods", moodRouter);
+
 export { router };
