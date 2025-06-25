@@ -27,9 +27,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   const body = req.body as loggedMood;
-
   const newId = Math.random().toString(36).substring(2, 8);
-
   const { id, ...bodyWithoutId } = body;
   const finalLoggedMood = { id: newId, ...bodyWithoutId };
   moods.push(finalLoggedMood);
