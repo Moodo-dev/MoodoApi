@@ -7,6 +7,7 @@ const app = express();
 const PORT = 5001;
 const version = 0.1;
 
+//TODO: Future proof this for local hosting on other users
 app.use(
   cors({
     origin: "http://localhost:5173",
