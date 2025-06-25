@@ -26,10 +26,14 @@ router.get("/:id", (req, res) => {
 //! POST ENDPOINTS
 
 router.post("/", (req, res) => {
-  const newMood = req.body as loggedMood;
-  newMood.id = Math.random().toString(36).substring(2, 8);
-  moods.push(newMood);
-  res.status(201).json(newMood);
+  const body = req.body as loggedMood;
+
+  const newId = Math.random().toString(36).substring(2, 8);
+
+  const { id, ...bodyWithoutId } = body;
+  const finalLoggedMood = { id: newId, ...bodyWithoutId };
+  moods.push(finalLoggedMood);
+  res.status(201).json(finalLoggedMood);
 });
 
 //! PUT ENDPOINTS
