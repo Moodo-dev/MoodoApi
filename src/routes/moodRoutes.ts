@@ -33,6 +33,7 @@ router.post("/", (req, res) => {
 });
 
 //! PUT ENDPOINTS
+
 router.put("/:id", (req, res) => {
   const idToUpdate = req.params.id as string;
   const index = moods.findIndex((m) => m.id === idToUpdate);
@@ -45,6 +46,22 @@ router.put("/:id", (req, res) => {
     };
 
     res.json(moods[index]);
+  } else {
+    res.status(404).json({
+      message: "Logged mood not found",
+    });
+  }
+});
+
+//! DELETE ENDPOINTS
+
+router.delete("/:id", (req, res) => {
+  const idToDelete = req.params.id as string;
+  const index = moods.findIndex((m) => m.id === idToDelete);
+
+  if (index !== -1) {
+    moods.splice(index, 1);
+    res.status(204).send();
   } else {
     res.status(404).json({
       message: "Logged mood not found",
