@@ -19,7 +19,9 @@ app.use(bodyParser.json());
 app.use("/api", master);
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(
+    `Server running at http://localhost:${PORT} on version ${version}`
+  );
 });
 
 export { app };
