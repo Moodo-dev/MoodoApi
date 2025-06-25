@@ -14,8 +14,13 @@ router.get("/", (_req, res) => {
 router.get("/:id", (req, res) => {
   const idToSearch = req.params.id;
   const foundMood = moods.find((m) => m.id === idToSearch);
-  if (foundMood) res.json(foundMood);
-  else res.status(404).json({ message: "Logged mood not found" });
+  if (foundMood) {
+    res.json(foundMood);
+  } else {
+    res.status(404).json({
+      message: "Logged mood not found",
+    });
+  }
 });
 
 //! POST ENDPOINTS
