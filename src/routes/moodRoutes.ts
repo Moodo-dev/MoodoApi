@@ -32,4 +32,24 @@ router.post("/", (req, res) => {
   res.status(201).json(newMood);
 });
 
+//! PUT ENDPOINTS
+router.put("/:id", (req, res) => {
+  const idToUpdate = req.params.id as string;
+  const index = moods.findIndex((m) => m.id === idToUpdate);
+
+  if (index !== -1) {
+    moods[index] = {
+      id: idToUpdate,
+      mood: req.body.mood,
+      note: req.body.note,
+    };
+
+    res.json(moods[index]);
+  } else {
+    res.status(404).json({
+      message: "Logged mood not found",
+    });
+  }
+});
+
 export { router, moods };
